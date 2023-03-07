@@ -44,12 +44,14 @@
 
 .infos {
     display: flex;
-    gap: 5em;
-    gap: 30px;
-    gap: 50px;
-
-    /* border: 1px solid green; */
+    /* gap: 50px; */
 }
+
+
+.rightInfos, .leftInfos {
+    flex: 50%;
+}
+
 
 .divInfos span {
     font-weight: bold;

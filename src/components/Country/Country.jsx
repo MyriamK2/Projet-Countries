@@ -1,7 +1,6 @@
 import "./Country.css";
 import { Form, Link, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { useEffect, useState } from "react";
 
 
 export default function Country({selection, darkMode, setDarkMode, datas}) {
