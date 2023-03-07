@@ -27,11 +27,11 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home datas={datas} setDatas={setDatas} selection={selection} setSelection={setSelection} darkMode={darkMode} setDarkMode={setDarkMode} />
+      element: <Home datas={datas} setSelection={setSelection} darkMode={darkMode} setDarkMode={setDarkMode} />
     },
     {
       path: "/country/:id",
-      element: <Country selection={selection} darkMode={darkMode} setDarkMode={setDarkMode} />
+      element: <Country selection={selection} darkMode={darkMode} setDarkMode={setDarkMode} datas={datas} />
     },
     {
       path:"*",

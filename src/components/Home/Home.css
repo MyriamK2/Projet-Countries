@@ -10,7 +10,6 @@
     border: transparent;
     width: 100%;
     padding: 0.5em;
-    /* height: 50%; */
 }
 
 .divInputs input:focus {
@@ -37,7 +36,6 @@
 }
 
 .leftInput {
-    width: 20em;
     width: 25em;
     gap: 0.5em;
 }
@@ -61,16 +59,23 @@
     margin-top: 3px;
 }
 
+.pRightInput {
+    padding: 10px 0px;
+    padding-right: 1em;
+}
+
 .dropdown-content {
     /* display: none; */
     position: absolute;
     left: -25px;
     top: 18px;
+    top: 35px;
     background-color: #f9f9f9;
     background-color: white;
     border-radius: 5px;
     min-width: 140px;
-    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(200, 199, 199, 0.844);
     padding: 5px 3px;
     z-index: 1;
 }
@@ -78,7 +83,6 @@
 .dropdown-content p {
     margin: 0;
     padding: 3px;
-    /* padding-left: 30px; */
 }
 
 .divCheck {
@@ -86,6 +90,7 @@
     align-items: center;
     gap: 0.5em;
 }
+
 .divCheck:hover {
     background-color: rgb(0, 55, 255);
     background-color: #2596be;
@@ -94,16 +99,15 @@
 }
 
 .checkBox {
-    /* border: 1px solid red; */
     width: 15px;
     margin-left: 5px;
 }
 
 
 /* --------------------- HERE --------------------- */
-.rightInput:hover .dropdown-content {
+/* .rightInput:hover .dropdown-content {
     display: block;
-}
+} */
 /* .rightInput:active .dropdown-content {
     transition-delay: 1s;
     display: none;
@@ -112,10 +116,17 @@
 
 
 .dropdown-content p:hover {
-    background-color: rgb(0, 55, 255);
     background-color: #2596be;
     color: white;
     border-radius: 5px;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
 }
 
 
@@ -128,45 +139,15 @@
     0% {
         background-color: #2596be;
         opacity: 0;
-        /* transform: scale(1); */
     }
 
     75% {
         background-color: none;
         opacity: 0.75;
-        /* transform: scale(0.95); */
     }
 
     100% {
         background-color: #2596be;
         opacity: 0;
-        /* transform: scale(1); */
     }
-}
-
-
-
-
-
-
-
-
-.rightInput select {
-    width: 7em;
-    height: 100%;
-    border: transparent;
-    cursor: pointer;
-}
-
-.rightInput select:focus {
-    outline: transparent;
-}
-
-
-.d-none {
-    display: none;
-}
-
-.d-block {
-    display: block;
 }

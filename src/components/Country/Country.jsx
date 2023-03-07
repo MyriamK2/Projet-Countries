@@ -1,10 +1,27 @@
 import "./Country.css";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import { useEffect, useState } from "react";
 
 
-export default function Country({selection, darkMode, setDarkMode}) {
+export default function Country({selection, darkMode, setDarkMode, datas}) {
     //TODO ---------- States / Comportements ----------
+
+    //* ---------- Prevent lost of infos (after refresh) ----------
+
+    const {id} = useParams();
+
+    selection = datas.find((e) => e.name.common.split(' ').join('-') === id);
+
+    if(!selection){
+        return <div>Loading...</div>;
+    }
+
+
+    //* ---------- Get name.common of border countries ----------
+
+    let borderCountries = datas.filter(country => selection.borders ? selection.borders.includes(country.cca3) : "").map(country => country.name.common);
+
 
     //* ---------- Get Languages ----------
 
@@ -12,11 +29,14 @@ export default function Country({selection, darkMode, setDarkMode}) {
 
     let langMap = lang.map((element) => {
         if(lang.length > 1) {
+            // let txtLang = element + ", ";
+            // txtLang.substring(0, txtLang.length - 1);
             return element + ", "
         } else {
             return element
         }
     })
+
     
     //* ---------- Get Currencies ----------
 
@@ -24,10 +44,7 @@ export default function Country({selection, darkMode, setDarkMode}) {
     let currenKey = curren.map((element) => {return element});
 
 
-    console.log("ici : " + selection.borders);
-    console.log("type : " + typeof selection.borders);
-
-
+    
     //TODO ---------- Affichage ----------
 
     return (
@@ -64,57 +81,14 @@ export default function Country({selection, darkMode, setDarkMode}) {
                     <div className="divBorderCountries">
                         <p><span>Border Countries :</span></p>
 
-                        {selection.borders.map((element) => {
+                        {selection.borders ? borderCountries.map((element, index) => {
                                 return (
-                                    <Link className={darkMode ? "dark" : ""}>{element}</Link>
+                                    <Link to={`/country/${element.split(' ').join('-')}`} key={index} className={darkMode ? "dark" : ""}>{element}</Link>
                                 )
-                            })}
-
-                        {/* puis confere cca3 / altSpellings? */}
-                        
-                        {/* <Link className={darkMode ? "dark" : ""}>BorderCountry</Link>
-                        <Link className={darkMode ? "dark" : ""}>BorderCountry</Link>
-                        <Link className={darkMode ? "dark" : ""}>BorderCountry</Link> */}
-                        {/* <Link>BorderCountry</Link>
-                        <Link>BorderCountry</Link> */}
-                        
-                        
+                            }) : ""}
                     </div>
                 </div>
             </section>
         </div>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let currencie;
-// for (let element in selection.currencies) {
-//     currencie = element
-// }
-// console.log("ici currencie : " + selection.currencies[currencie].name);
-
-
-{/* {selection.currencies[currencie].name} */}
-{/* {currencie} */}

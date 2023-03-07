@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
+
 
 export default function Card({ source, pays, population, region, capital, darkMode }) {
 
