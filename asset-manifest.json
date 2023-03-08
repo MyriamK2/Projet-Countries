@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Projet-Countries/static/css/main.d1df7e46.css",
+    "main.js": "/Projet-Countries/static/js/main.00b89941.js",
+    "static/media/glitch2.jpg": "/Projet-Countries/static/media/glitch2.ae117de9c796c9e77784.jpg",
+    "index.html": "/Projet-Countries/index.html",
+    "main.d1df7e46.css.map": "/Projet-Countries/static/css/main.d1df7e46.css.map",
+    "main.00b89941.js.map": "/Projet-Countries/static/js/main.00b89941.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1df7e46.css",
+    "static/js/main.00b89941.js"
+  ]
+}
